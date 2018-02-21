@@ -23,9 +23,11 @@ fun main(args: Array<String>) {
     }
     if (HELP.isEnabled(line)) {
         HELP.execute(applicationConfig.getOptions())
+        System.exit(0)
     }
     if (VERSION.isEnabled(line)) {
         VERSION.execute()
+        System.exit(0)
     }
 
     val configPath: String
