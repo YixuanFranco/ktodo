@@ -4,7 +4,7 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
-class TodoTest {
+class TaskTest {
     @Test fun test_parse() {
         var todo = parse("foo;true")
         assertEquals("foo", todo.name)

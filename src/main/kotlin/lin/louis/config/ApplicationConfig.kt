@@ -17,7 +17,8 @@ fun loadApplicationConfig(): ApplicationConfig {
     properties.load(ClassLoader.getSystemResourceAsStream("application.properties"))
     val actionCmd: List<ActionCmd> = listOf(
             ADD,
-            LIST
+            LIST,
+            FINISH
     )
     val commands = actionCmd + listOf(
             CONFIG,

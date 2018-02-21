@@ -2,7 +2,7 @@ package lin.louis
 
 val SEPARATOR = ";"
 
-class Todo (var name: String, var isDone: Boolean = false) {
+class Task(var name: String, var isDone: Boolean = false) {
     override fun toString(): String {
         var done = ""
         if (isDone) {
@@ -12,16 +12,16 @@ class Todo (var name: String, var isDone: Boolean = false) {
     }
 
     fun toLine(): String {
-        return "$name$SEPARATOR"
+        return "$name$SEPARATOR$isDone"
     }
 }
 
-fun parse(line: String): Todo {
+fun parse(line: String): Task {
     val array = line.split(SEPARATOR)
     if (array.size < 2) {
-        return Todo("", false)
+        return Task("", false)
     }
-    return Todo(sanitize(array[0]), sanitize(array[1]).toBoolean())
+    return Task(sanitize(array[0]), sanitize(array[1]).toBoolean())
 }
 
 fun sanitize(s: String): String {
