@@ -5,7 +5,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertFalse
 
 class TaskTest {
-    @Test fun test_parse() {
+    @Test
+    fun test_parse() {
         var todo = parse("foo;true")
         assertEquals("foo", todo.name)
         assert(todo.isDone)
@@ -27,7 +28,8 @@ class TaskTest {
         assert(todo.isDone)
     }
 
-    @Test fun test_sanitize() {
+    @Test
+    fun test_sanitize() {
         assertEquals("", sanitize(""))
         assertEquals("foobar", sanitize("foobar"))
         assertEquals("foobar", sanitize("foo\nbar\n"))

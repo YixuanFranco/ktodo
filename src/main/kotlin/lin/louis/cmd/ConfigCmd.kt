@@ -13,8 +13,8 @@ class ConfigCmd : AbstractCmd() {
         return option
     }
 
-    fun execute(t: String): DataConfig {
-        val path = createFileIfNotExists(t)
+    fun execute(filePathStr: String): DataConfig {
+        val path = createFileIfNotExists(filePathStr)
         debug("Reading from config '$path'...")
         val config = getConfigFromFile(Files.newBufferedReader(path))
         debug("DataConfig loaded with the following values: $config")

@@ -1,6 +1,6 @@
 package lin.louis
 
-val SEPARATOR = ";"
+const val SEPARATOR = ";"
 
 class Task(var name: String, var isDone: Boolean = false) {
     override fun toString(): String {

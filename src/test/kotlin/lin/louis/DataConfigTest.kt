@@ -6,7 +6,8 @@ import java.nio.charset.StandardCharsets
 import kotlin.test.*
 
 class DataConfigTest {
-    @Test fun test_getConfigFromFile() {
+    @Test
+    fun test_getConfigFromFile() {
         val reader = InputStreamReader(javaClass.classLoader.getResourceAsStream("ktodo.properties"), StandardCharsets.UTF_8)
         val config = getConfigFromFile(reader)
 
