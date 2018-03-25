@@ -1,4 +1,4 @@
-# Kotlin TODO
+# Kotlin TODO [![Build Status][]](https://travis-ci.org/l-lin/ktodo)
 
 > Yet another TODO command line app. This project is used for training purpose
 
@@ -15,3 +15,5 @@
 mvn clean install
 java -jar target/ktodo.jar -h
 ```
+
+[Build Status]: https://travis-ci.org/l-lin/ktodo.svg?branch=master
