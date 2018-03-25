@@ -11,7 +11,6 @@ class AddCmd: AbstractCmd(), ActionCmd {
     }
 
     override fun execute(p: Path, arg: String) {
-        // I have to add the empty string, otherwise, it's not going to add a new line
-        p.toFile().appendText("" + Task(arg).toLine())
+        p.toFile().appendText(Task(arg).toLine() + "\n")
     }
 }

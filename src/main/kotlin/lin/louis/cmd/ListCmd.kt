@@ -1,9 +1,7 @@
 package lin.louis.cmd
 
-import lin.louis.Task
 import lin.louis.parse
 import org.apache.commons.cli.Option
-import java.nio.file.Files
 import java.nio.file.Path
 
 class ListCmd : AbstractCmd(), ActionCmd {
@@ -13,9 +11,11 @@ class ListCmd : AbstractCmd(), ActionCmd {
     }
 
     override fun execute(p: Path, arg: String) {
-        val tasks = ArrayList<Task>()
-        val stream = Files.newBufferedReader(p)
-        stream.buffered().lines().forEach { line -> tasks.add(parse(line)) }
-        tasks.forEach { println(it) }
+        p.toFile()
+                .readLines()
+                .map { parse(it) }
+                .forEach {
+                    println(it)
+                }
     }
 }

@@ -2,12 +2,9 @@ package lin.louis
 
 const val SEPARATOR = ";"
 
-class Task(var name: String, var isDone: Boolean = false) {
+data class Task(var name: String, var isDone: Boolean = false) {
     override fun toString(): String {
-        var done = ""
-        if (isDone) {
-            done = "X"
-        }
+        val done = if (isDone) "X" else ""
         return "$name \t$done"
     }
 

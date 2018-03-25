@@ -11,6 +11,6 @@ data class DataConfig(val dataFilePath: String)
 fun getConfigFromFile(reader: Reader): DataConfig {
     val properties = Properties()
     properties.load(reader)
-    var dataFolder = properties.getProperty(DATA_FOLDER, "/tmp")
+    val dataFolder = properties.getProperty(DATA_FOLDER, "/tmp")
     return DataConfig("$dataFolder/$DATA_FILE")
 }
